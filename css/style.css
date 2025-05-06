@@ -1,9 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 20px;
-  background-color: #f5f5f5;
 }
 
 .card {
@@ -11,114 +21,72 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 20px auto;
   max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  gap: 20px;
 }
 
 .profile-pic {
-  width: 100%;
-  height: auto;
-  border-radius: 100%;
-  margin-bottom: 100px;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .name {
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 10px 0;
-  color: #fff;
+  color: #000;
 }
 
-.title {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 5px 0;
-}
-
+.title,
 .phone,
 .company {
   font-size: 1rem;
-  color: #fff;
-  margin: 5px 0;
+  color: #222;
 }
 
-.profile-pic {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 25px;
-  padding: 50px;
-}
-/* Mobile */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .card {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .card-content {
+    align-items: flex-start;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
   }
 }
 
-/* Tablet */
 @media (min-width: 1024px) {
-  .card {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1400px) {
-  .card {
-    width: 100%;
-    padding: 40px;
-    font-size: 1.2rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-/* Desktop */
-@media (max-width: 1400px) {
   .profile-pic {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 25px;
-    padding: 50px;
-    flex-direction: row;
+    width: 220px;
+    height: 220px;
   }
-}
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .profile-pic {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 25px;
-    padding: 50px;
-    flex-direction: row;
+  .name {
+    font-size: 2rem;
   }
-}
 
-/* Mobile */
-@media (max-width: 600xpx) {
-  .profile-pic {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 25px;
-    padding: 50px;
-    flex-direction: column;
+  .title,
+  .phone,
+  .company {
+    font-size: 1.1rem;
   }
 }
